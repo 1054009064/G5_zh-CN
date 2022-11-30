@@ -1,7 +1,9 @@
+
 ### 以下内容仅供参考
 
-*Source:* 
+**转载请标明以下以及 [我的](https://github.com/1054009064/G5_zh-CN) 来源信息**
 
+**Source:** 
 1. https://openwrt.org/inbox/toh/zyxel/nbg7815_armor_g5
 2. https://forum.openwrt.org/t/openwrt-support-for-armor-g5-nbg7815/98598/62
 3. https://forum.openwrt.org/t/openwrt-support-for-armor-g5-nbg7815/98598/71
@@ -94,34 +96,38 @@ Hit any key to stop autoboot:  3
 NBG7815>
 ```
 2. 获取密码的 seed
+```bash
+ATSE NBG7815
 ```
-NBG7815> ATSE NBG7815
+
 013D72FF0710
-```
+
 ![!](picture/icon_exclaim.gif) Seed 每次都不会一样
 
  3. 生成密码
 从 https://github.com/itorK/nbg7815_tools/blob/main/tool.sh 获取 bash 脚本，并使用你的 seed 计算密码，如下所示
+```bash
+sh tool.sh 013D72FF0710
 ```
-# sh tool.sh 013D72FF0710
+ATEN 1,10F0A563
+
+将输出放到终端
+```bash
 ATEN 1,10F0A563
 ```
-将输出放到终端
-```
-NBG7815> ATEN 1,10F0A563
-```
 4. 使用完整的 u-boot 访问权限登陆
+```bash
+ATGU
 ```
-NBG7815> ATGU
+
 ZYXEL#
-```
 
 
 
 ## 刷机
 
 1. 通过 SSH 以 root 身份登录路由器并备份实际的分区:
-```shell
+```bash
 mkdir /tmp/ApplicationData/backup
 mkdir /tmp/ApplicationData/openwrt
 dd if=/dev/mmcblk0p7 of=/tmp/ApplicationData/backup/hlos_blk0p7.bin
@@ -132,7 +138,7 @@ dd if=/dev/mmcblk0p8 of=/tmp/ApplicationData/backup/rootfs_blk0p8.bin
 2. 使用 WinSCP 客戶端将 kernel 和 root 文件放在 `/tmp/ApplicationData/openwrt` 文件夹中， 可以通过解压 openwrt-ipq807x-generic-zyxel_nbg7815-squashfs-sysupgrade.bin 文件（例如使用 7zip）来获得这些文件
 
 3. 再次用 SSH 以 root 身份登陆到路由器并执行擦写命令：
-```shell
+```bash
 dd if=/dev/zero of=/dev/mmcblk0p7
 dd if=/tmp/ApplicationData/openwrt/kernel of=/dev/mmcblk0p7
     
@@ -145,12 +151,12 @@ dd if=/tmp/ApplicationData/openwrt/root of=/dev/mmcblk0p8
 
 ## 恢复原厂固件
 
-```shell
+```bash
 mount /dev/mmcblk0p11 /mnt
 mkdir /mnt/backup
 ```
 通过 WinSCP 将之前保存的分区备份放到 `/mnt/backup` 目录
-```
+```bash
 dd if=/dev/zero of=/dev/mmcblk0p7
 dd if=/mnt/backup/hlos_blk0p7.bin of=/dev/mmcblk0p7
   
@@ -163,23 +169,23 @@ dd if=/mnt/backup/rootfs_blk0p8.bin of=/dev/mmcblk0p8
 ## 救砖
 
 方法一：
-1. 获取 initramfs ： https://github.com/itorK/nbg7815_tools/blob/main/openwrt-ipq807x-generic-zyxel_nbg7815-initramfs-fit-uImage.itb
+1. 获取 [initramfs](https://github.com/itorK/nbg7815_tools/blob/main/openwrt-ipq807x-generic-zyxel_nbg7815-initramfs-fit-uImage.itb)
 2. 将电脑的 IP 地址设置为 192.168.1.99/24，网关 192.168.1.1，安裝 tftp 服务器（例如 SolarWinds TFTP，TFTPD64）
 3. 将 initramfs 文件放到 TFTP 服务器的文件目录中
 4. 关闭防火墙并通过网线连接到路由器
 5. 中断 Uboot 的自动引导并执行 [获取完全的 U-Boot 访问权限](https://github.com/1054009064/G5_zh-CN#%E8%8E%B7%E5%8F%96%E5%AE%8C%E5%85%A8%E7%9A%84-u-boot-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90) 步骤
 6. 执行以下命令：
-```
-Zyxel# tftpboot 0x44000000 192.168.1.99:openwrt-ipq807x-generic-zyxel_nbg7815-initramfs-fit-uImage.itb && bootm
+```bash
+tftpboot 0x44000000 192.168.1.99:openwrt-ipq807x-generic-zyxel_nbg7815-initramfs-fit-uImage.itb && bootm
 ```
 初始化后，执行  [恢复原厂固件](https://github.com/1054009064/G5_zh-CN#%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8E%82%E5%9B%BA%E4%BB%B6) 步骤或 [刷机 3](https://github.com/1054009064/G5_zh-CN#%E5%88%B7%E6%9C%BA) 步骤
 
 方法二：
-1. 获取原厂固件： https://d3jal3boi407dg.cloudfront.net/mycloud/nbg7815/latest_firmware_info/s3_file/1634698613953/V1.00(ABSK.7)C0.bin
+1. 获取[原厂固件](https://d3jal3boi407dg.cloudfront.net/mycloud/nbg7815/latest_firmware_info/s3_file/1634698613953/V1.00(ABSK.7)C0.bin)
 2. 将电脑的 IP 地址设置为 192.168.1.99/24，网关 192.168.1.1，安裝 tftp 服务器（例如 SolarWinds TFTP，TFTPD64）
 3. 将 `V1.00(ABSK.7)C0.bin` 文件放到 TFTP 服务器的文件目录中
 4. 关闭防火墙并通过网线连接到路由器
 5. 中断 Uboot 的自动引导，无需解锁 Uboot，执行以下命令
-```
-NBG7815> ATUR V1.00(ABSK.7)C0.bin
+```bash
+ATUR V1.00(ABSK.7)C0.bin
 ```
