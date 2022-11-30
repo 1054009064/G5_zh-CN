@@ -24,11 +24,11 @@ NBG7815 login: root
 password: nbg7815@2019
 ```
 
-![!](picture/icon_exclaim.gif) 请你遵循下面的 [SSH 访问](https://github.com/1054009064/G5_zh-CN#ssh-%E8%AE%BF%E9%97%AE) 步骤，否则路由器设置后，root 将会被系统修改
+![!](picture/icon_exclaim.gif) 请你遵循下面的 [SSH 访问权限](https://github.com/1054009064/G5_zh-CN#ssh-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90) 步骤，否则路由器设置后，root 将会被系统修改
 
 
 
-## SSH 访问
+## SSH 访问权限
 
 首先，你需要获得 root 访问权限（请参阅 [root 访问权限](https://github.com/1054009064/G5_zh-CN#root-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90) 部分）
 
