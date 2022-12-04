@@ -16,7 +16,7 @@
 以下是 root 访问的步骤：
 
 1. 断开 WAN 口的网线
-2. 按下 reset 按钮 15 秒，将 Armor G5 重置为出厂默认设置，此时 LED 灯常亮为橙色
+2. 按下 reset 按钮 15 秒，将 Armor G5 重置为出厂默认设置，此时 LED 灯为闪烁的橙色
 3. 5 - 10 分钟后，当 LED 变为深蓝色常亮时，插入 LAN 口的网线并通过 telnet  连接到 192.168.123.1 端口 23 上
 4. 迅速輸入以下登陆信息：
 ```
@@ -189,3 +189,8 @@ tftpboot 0x44000000 192.168.1.99:openwrt-ipq807x-generic-zyxel_nbg7815-initramfs
 ```bash
 ATUR V1.00(ABSK.7)C0.bin
 ```
+
+
+
+## 其它
+升降级 web：https://192.168.123.1/gui/#/main/debug/firmwareupgrade
