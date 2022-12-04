@@ -1,2 +1,3 @@
 d85c4c6c33057a9568f7ba5413a3d15a4dd9c609d476b3b4fe6c02e02ea2ae04	openwrt-ipq807x-generic-zyxel_nbg7815-initramfs-fit-uImage.itb
+96e1e992552883e2a720e443f0ee5d31ba9b12bdd231786daed7d8425483e0f4	V1.00(ABSK.6)C0.bin
 3a6cd0a4a15fa88bfe4e05d77e562ccd6dfb9bc61994d411155d94710192a884	V1.00(ABSK.7)C0.bin
