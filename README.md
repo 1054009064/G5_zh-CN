@@ -193,4 +193,45 @@ ATUR V1.00(ABSK.7)C0.bin
 
 
 ## 其它
-升降级 web：https://192.168.123.1/gui/#/main/debug/firmwareupgrade
+1. 升降级 web：https://192.168.123.1/gui/#/main/debug/firmwareupgrade
+2. 分区信息
+<details><summary>info</summary>
+
+```
+mtdblock0		0:SBL1			320
+mtdblock1		0:MIBIB			64
+mtdblock2		0:BOOTCONFIG		128
+mtdblock3		0:BOOTCONFIG1		128
+mtdblock4		0:QSEE			1536
+mtdblock5		0:QSEE_1		1536
+mtdblock6		0:DEVCFG		64
+mtdblock7		0:DEVCFG_1		64
+mtdblock8		0:APDP			64
+mtdblock9		0:APDP_1		64
+mtdblock1		0:RPM			256
+mtdblock11		0:RPM_1			256
+mtdblock12		0:CDT			64
+mtdblock13		0:CDT_1			64
+mtdblock14		0:APPSBL		768
+mtdblock15		0:APPSBL_1		768
+mtdblock16		0:APPSBLENV		64
+mtdblock17		0:ART			256
+mtdblock18		0:ETHPHYFW		512
+mtdblock19		0:CRT			64
+mtdblock20		DUAL_FLAG		64
+mtdblock21		RESERVED		1088
+
+mmcblk0p1		rootfs_data		8192
+mmcblk0p2		header			1024
+mmcblk0p3		0:HLOS			6144
+mmcblk0p4		rootfs			61440
+mmcblk0p5		squashfs		4096
+mmcblk0p6		header_1		1024
+mmcblk0p7		0:HLOS_1		6144
+mmcblk0p8		rootfs_1		61440
+mmcblk0p9		0:WIFIFW_1		4096
+mmcblk0p10		nbg			524288
+mmcblk0p11		appdata			2883584
+```
+
+</details>
