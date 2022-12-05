@@ -8,7 +8,7 @@
 2. https://forum.openwrt.org/t/openwrt-support-for-armor-g5-nbg7815/98598/62
 3. https://forum.openwrt.org/t/openwrt-support-for-armor-g5-nbg7815/98598/71
 4. https://forum.openwrt.org/t/openwrt-support-for-armor-g5-nbg7815/98598/73
-
+5. https://github.com/itorK/openwrt/tree/nbg7815
 
 
 ## root 访问权限
