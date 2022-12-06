@@ -107,7 +107,9 @@ ATSE NBG7815
  3. 生成密码
 从 https://github.com/itorK/nbg7815_tools/blob/main/tool.sh 获取 bash 脚本，并使用你的 seed 计算密码，如下所示
 ```bash
-sh tool.sh 013D72FF0710
+wget https://github.com/itorK/nbg7815_tools/blob/main/tool.sh
+chmod 755 tool.sh
+./tool.sh 013D72FF0710
 ```
 ATEN 1,10F0A563
 
