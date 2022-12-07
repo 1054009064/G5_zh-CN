@@ -108,7 +108,7 @@ NBG7815> 013D72FF0710
  3. 生成密码
 从 https://github.com/itorK/nbg7815_tools/blob/main/tool.sh 获取 bash 脚本，并使用你的 seed 计算密码，如下所示
 ```bash
-wget https://github.com/itorK/nbg7815_tools/blob/main/tool.sh
+wget https://raw.githubusercontent.com/itorK/nbg7815_tools/main/tool.sh
 chmod 755 tool.sh
 ./tool.sh 013D72FF0710
 ```
