@@ -99,8 +99,9 @@ NBG7815>
 ```bash
 ATSE NBG7815
 ```
-
-013D72FF0710
+```
+NBG7815> 013D72FF0710
+```
 
 ![!](picture/icon_exclaim.gif) Seed 每次都不会一样
 
