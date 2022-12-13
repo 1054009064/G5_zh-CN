@@ -1,7 +1,7 @@
 
 ### 以下内容仅供参考
 
-**转载请标明以下以及 [我的](https://github.com/1054009064/G5_zh-CN) 来源信息**
+**转载请标明以下来源信息**
 
 **Source:** 
 1. https://openwrt.org/inbox/toh/zyxel/nbg7815_armor_g5
